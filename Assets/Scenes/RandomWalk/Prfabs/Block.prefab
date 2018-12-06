@@ -108,4 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 317fe54e08003384987532949330d178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MyColor: {r: 1, g: 1, b: 1, a: 1}
+  positionX: 0
+  positionY: 0
+  isHorizontal: 0

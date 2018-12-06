@@ -93,9 +93,7 @@ public class RandomWalk : MonoBehaviour
         {
             int length = Random.Range(MaxLength / 5, MaxLength);
             int direction = Random.Range(0, 4);
-
             bool createRoom = true;
-
             switch (direction)
             {
                 //up
@@ -121,7 +119,6 @@ public class RandomWalk : MonoBehaviour
                         if(createRoom)
                         {
                             StartCoroutine(GenerateRoom(new Vector2Int(lastPositionX, lastPositionY)));
-
                         }
                         break;
                     }
@@ -135,7 +132,6 @@ public class RandomWalk : MonoBehaviour
                             {
                                 GOMap[lastPositionX, lastPositionY].GetComponent<Renderer>().material.color = Color.red;
                                 lastPositionY--;
-
                             }
                             else
                             {
@@ -143,15 +139,12 @@ public class RandomWalk : MonoBehaviour
                                 lastPositionY = startingPositionY;
                                 createRoom = false;
                                 break;
-
                             }
                             yield return new WaitForSeconds(WaitTime);
-
                         }
                         if (createRoom)
                         {
                             StartCoroutine(GenerateRoom(new Vector2Int(lastPositionX, lastPositionY)));
-
                         }
                         break;
                     }
@@ -170,7 +163,6 @@ public class RandomWalk : MonoBehaviour
                             {
                                 lastPositionX = startingPositionX;
                                 lastPositionY = startingPositionY;
-
                                 createRoom = false;
                                 break;
                             }
@@ -179,7 +171,6 @@ public class RandomWalk : MonoBehaviour
                         if (createRoom)
                         {
                             StartCoroutine(GenerateRoom(new Vector2Int(lastPositionX, lastPositionY)));
-
                         }
                         break;
                     }
@@ -193,22 +184,18 @@ public class RandomWalk : MonoBehaviour
                             {
                                 GOMap[lastPositionX, lastPositionY].GetComponent<Renderer>().material.color = Color.red;
                                 lastPositionX++;
-
                             }
                             else
                             {
                                 lastPositionX = startingPositionX;
                                 lastPositionY = startingPositionY;
                                 break;
-
                             }
                             yield return new WaitForSeconds(WaitTime);
                         }
                         if (createRoom)
                         {
-
                             StartCoroutine(GenerateRoom(new Vector2Int(lastPositionX, lastPositionY)));
-
                         }
                         break;
                     }
@@ -423,8 +410,8 @@ public class RandomWalk : MonoBehaviour
     }
 
     /*
-     *  I started to make a cellular automata generator as well, but decided it would be 
-     *  better to tune the random walk instead.
+     *  I started to make a Binary Space Partitioning generator as well, but decided it would be 
+     *  better to tune the random walk instead. I also misnamed it :p
      */
 
     //public void GenerateCellA()

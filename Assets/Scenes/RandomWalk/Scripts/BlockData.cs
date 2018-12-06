@@ -6,4 +6,12 @@ public class BlockData : MonoBehaviour
 {
     public int positionX, positionY;
     public bool isHorizontal;
+
+    
+
+    public void UpdateCellularAutomata()
+    {
+
+    }
+
 }
